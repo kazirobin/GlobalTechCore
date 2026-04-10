@@ -1,0 +1,249 @@
+/* ====================== NAVBAR ====================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Text colors */
+.navbar .nav-link,
+.navbar .selected-text {
+  color: #ddd;
+  transition: color 0.3s;
+}
+
+.navbar.scrolled .nav-link,
+.navbar.scrolled .selected-text {
+  color: #333;
+}
+
+.navbar.scrolled .selector-button {
+  background: white;
+  border-color: #ddd;
+}
+
+/* Container */
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  gap: 15px;
+}
+
+/* Logo */
+.logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* Desktop Menu */
+.nav-menu {
+  display: none;
+  gap: 30px;
+}
+
+.nav-link {
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  color: #0066ff !important;
+}
+
+/* Language Selector */
+.language-selector {
+  position: relative;
+  min-width: 105px;
+}
+
+.selector-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  backdrop-filter: blur(8px);
+}
+
+.selector-button:hover {
+  border-color: #0066ff;
+  background: rgba(255,255,255,0.25);
+}
+
+.flag {
+  width: 26px;
+  height: 19px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.arrow {
+  transition: transform 0.4s ease;
+  color: inherit;
+}
+
+.selector-button:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.language-selector:hover .dropdown,
+.language-selector.active .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  color: #333;
+}
+
+.dropdown-option:hover {
+  background: #f0f5ff;
+}
+
+/* Login Button */
+.login-btn {
+  background: #0066ff;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.3s;
+  display: none;
+}
+
+.login-btn:hover {
+  background: #0052cc;
+}
+
+/* Hamburger */
+.hamburger {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  transition: all 0.4s ease;
+  padding: 5px;
+  i.fa-solid{
+    color: #fff;                    /* White by default */
+
+  }
+}
+
+.navbar.scrolled .hamburger {
+  color: #333;                    /* Dark when scrolled */
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 280px;
+  height: 100vh;
+  background: white;
+  box-shadow: 4px 0 25px rgba(0,0,0,0.25);
+  transition: left 0.45s cubic-bezier(0.32, 0.72, 0, 1);
+  z-index: 1100;
+  padding-top: 90px;
+}
+
+.mobile-menu.open {
+  left: 0;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+  gap: 18px;
+}
+
+.mobile-menu .nav-link {
+  color: #333;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.mobile-login {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* ====================== RESPONSIVE ====================== */
+@media (min-width: 992px) {
+  .nav-menu { 
+    display: flex; 
+  }
+  
+  .hamburger { 
+    display: none; 
+  }
+  
+  .login-btn { 
+    display: inline-block; 
+  }
+}
+
+@media (max-width: 991px) {
+  .hamburger { 
+    display: block; 
+  }
+  
+  .nav-menu,
+  .login-btn {
+    display: none;
+  }
+
+  .language-selector {
+    min-width: 92px;
+  }
+  
+  .selector-button {
+    padding: 7px 10px;
+    font-size: 15px;
+  }
+}
