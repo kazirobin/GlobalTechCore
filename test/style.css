@@ -15,13 +15,17 @@
 /* Text colors */
 .navbar .nav-link,
 .navbar .selected-text {
-  color: #ddd;
+  color: #ddd ;
   transition: color 0.3s;
 }
 
 .navbar.scrolled .nav-link,
 .navbar.scrolled .selected-text {
-  color: #333;
+  color: #333 ;
+} 
+.text-dark{
+  color: #333 !important;
+
 }
 
 .navbar.scrolled .selector-button {
@@ -95,12 +99,19 @@
 }
 
 .arrow {
-  transition: transform 0.4s ease;
-  color: inherit;
+  transition: transform 0.4s ease !important;
+  color: inherit ;
 }
+.arrow.selected-text{
+  color: #ddd;
 
+}
 .selector-button:hover .arrow {
-  transform: rotate(180deg);
+  transform: rotate(180deg) !important;
+}
+.selector-button:hover .arrow.selected-text {
+  transform: rotate(180deg) !important;
+  color: #ddd;
 }
 
 .dropdown {
@@ -167,10 +178,7 @@
   display: none;
   transition: all 0.4s ease;
   padding: 5px;
-  i.fa-solid{
-    color: #fff;                    /* White by default */
 
-  }
 }
 
 .navbar.scrolled .hamburger {
@@ -232,11 +240,10 @@
   .hamburger { 
     display: block; 
   }
-  
-  .nav-menu,
-  .login-btn {
-    display: none;
+  .mobile-login{
+    display: block;
   }
+
 
   .language-selector {
     min-width: 92px;

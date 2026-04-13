@@ -36,10 +36,8 @@
       href="uploads/footer/favicon_1773252205.png"
     />
 
-    <link
-      rel="stylesheet"
-      href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+   <!-- Add this in <head> section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&amp;display=swap"
       rel="stylesheet"
@@ -54,8 +52,7 @@
   </head>
   <body class="light-mode">
     <!-- ===== NAVIGATION — PREMIUM DEMO LOGO, 5 MENUS ===== -->
-    <!-- ===== NAVIGATION — PREMIUM LOGO ONLY + PERFECT CENTERED MENUS ===== -->
-      <link rel="stylesheet" href="./test/style.css" />
+     <link rel="stylesheet" href="./test/style.css" />
     <nav class="navbar">
       <div class="nav-container">
         <!-- Logo -->
@@ -74,7 +71,9 @@
               id="selected-flag"
             />
             <span class="selected-text" id="selected-country">SE</span>
-            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
+            <span class="arrow selected-text">
+              <i class="fa-solid fa-angle-down"></i>
+            </span>
           </div>
 
           <div class="dropdown">
@@ -135,10 +134,10 @@
         </div>
 
         <!-- Login Button (Desktop) -->
-        <a href="./student/login.html" class="login-btn">Login </a>
+        <a href="./student/login.html" class="login-btn desktop-login">Login </a>
 
         <!-- Hamburger -->
-        <button class="hamburger" aria-label="Toggle menu" style="color: white">
+        <button class="hamburger navbar selected-text " aria-label="Toggle menu">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
